@@ -1,0 +1,39 @@
+A { 
+	COLOR: #C23E3F;
+}
+A:active 
+{
+	CURSOR: default; 
+	TEXT-DECORATION: none;
+	COLOR: #C23E3F;
+}
+A:hover 
+{
+	TEXT-DECORATION: none; 
+	COLOR: #C23E3F;
+}
+A.no_link
+{
+ 	TEXT-DECORATION: none; 
+ 	COLOR : #000000
+}
+BODY, TD  
+{
+	FONT-SIZE: 9pt; 
+	FONT-FAMILY: Arial, Tahoma, MS Sans Serif;
+	text-align : justify
+}
+P
+{
+	margin: 0cm;	
+}
+BIG
+{
+	FONT-SIZE:16px; 
+	font-weight: bold;
+}
+.small 
+{
+	FONT-SIZE: 11px; 
+	FONT-FAMILY: Arial, Tahoma,  MS Sans Serif
+}

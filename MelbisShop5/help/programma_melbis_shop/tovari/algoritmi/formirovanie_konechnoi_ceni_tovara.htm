@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Формирование конечной цены товара</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+A:active 
+{
+	CURSOR: default; 
+	TEXT-DECORATION: none;
+}
+A:hover 
+{
+	TEXT-DECORATION: none; 
+}
+A.no_link
+{
+ 	TEXT-DECORATION: none; 
+ 	COLOR : #000000
+}
+BODY, TD  
+{
+	FONT-SIZE: 9pt; 
+	FONT-FAMILY: Arial, Tahoma, MS Sans Serif;
+	text-align : justify
+}
+P
+{
+	margin: 0cm;	
+}
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h2 align="center">Формирование конечной цены товара</h2>
+<p>Конечная цена товара определяется как производное от базовой цены товара<strong> 
+  </strong> с учетом скидок на товар (см.<a href="../menedger_skidok.htm">менеждер 
+  скидок</a>, <a href="../osobie_tovari/rasprodaga.htm">распродаж</a> или скидок, 
+  назначаемых в зависимости от категории покупателя (см.<a href="../menedger_skidok.htm">менеждер 
+  скидок</a>, <a href="../../zakazi_i_pokypateli/katalog_pokypateley.htm">каталог 
+  покупателей</a>).</p>
+<p>&nbsp;</p>
+<p>С учетом изложенного, конечная цена товара будет определяться как производное 
+  возможных скидок следующим образом:</p>
+<p>&nbsp;</p>
+<p align="center"><img src="../../../images/price_shema.gif" width="583" height="583" border="0"></p>
+<p align="center">&nbsp;</p>
+<p align="left">Где:</p>
+<p align="left"><strong>БЦ</strong> - базовая цена товара;</p>
+<p align="left"><strong>КЦ</strong> - конечная цена товара;</p>
+<p align="left"><span style="font-size: 15px; font-weight:bold">%</span>п - индивидуальный 
+  процент покупателя, задается в <a href="../../zakazi_i_pokypateli/katalog_pokypateley.htm">Каталоге 
+  покупателей</a>;</p>
+<p align="left"><span style="font-size: 15px; font-weight:bold">$ </span>- сумма 
+  скидки на товар;</p>
+<p align="left"><strong>ЦР</strong> - цена распродажи товара;</p>
+<p align="left"><strong>КП</strong> - категория покупателя, задается в <a href="../../zakazi_i_pokypateli/katalog_pokypateley.htm">Каталоге 
+  покупателей</a>;</p>
+<p align="left"><strong>К </strong>- заказываемое количество;</p>
+<p align="left"><font size="+1"><strong>f</strong></font><strong>cc </strong>- 
+  функция системы скидок, зависит от категории покупателя и количества заказываемого 
+  товара, подробнее в <a href="../menedger_skidok.htm">Менеджере скидок</a>;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>При этом следует иметь в виду, что скидки, назначаемые в зависимости от категории 
+  покупателя, или персональные скидки, назначенные покупателю, имеют приоритет 
+  над <a href="../menedger_skidok.htm">скидками</a> на товар.</p>
+</body>
+</html>

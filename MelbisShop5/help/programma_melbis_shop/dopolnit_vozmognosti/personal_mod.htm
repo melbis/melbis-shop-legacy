@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>Подключение собственных PHP-модулей</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+A:active 
+{
+	CURSOR: default; 
+	TEXT-DECORATION: none;
+}
+A:hover 
+{
+	TEXT-DECORATION: none; 
+}
+A.no_link
+{
+ 	TEXT-DECORATION: none; 
+ 	COLOR : #000000
+}
+BODY, TD  
+{
+	FONT-SIZE: 9pt; 
+	FONT-FAMILY: Arial, Tahoma, MS Sans Serif;
+	text-align : justify
+}
+P
+{
+	margin: 0cm;	
+}
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h2 align="center">Подключение собственных PHP-модулей</h2>
+<p>По мере развития интернет-магазина может возникнуть необходимость реализации 
+  собственных нестандартных функций. Поскольку скрипты поставляются с открытым 
+  кодом, есть вариант их самостоятельной доработки, но в этом случае надо помнить, 
+  что в случае выхода новой версии программы, вам либо придется отказаться от 
+  нее, либо еще раз реализовать необходимые исправления в обновленных скриптах. 
+  Чтобы разрешить данную ситуацию, мы реализовали специальную функцию в Melbis 
+  Shop, которая позволяет автоматически подключить дополнительные модули с набором 
+  необходимых функций. При этом нет необходимости править скрипты, достаточно 
+  разместить необходимый модуль в папке <em>php_mod</em> на сервере. Ниже будет 
+  рассмотрен пример, который реализует возможность вывода последней даты модификации 
+  прайс-листа магазина.</p>
+<p>&nbsp;</p>
+<p><strong>1.</strong> Создайте файл с именем <em>mod_price.php</em> со следующим 
+  содержимым:</p>
+<hr>
+<p><font face="Courier New, Courier, mono">&lt;?php </font></p>
+<blockquote> 
+  <p><font face="Courier New, Courier, mono"> function mod_price($mPageType) </font></p>
+  <p><font face="Courier New, Courier, mono">{ </font></p>
+  <blockquote> 
+    <p><font face="Courier New, Courier, mono">global $gTpl, $gOptions; <br>
+      <br>
+      $filename = './files/price.zip'; <br>
+      $echo_string = date($gOptions['main_fmt_date_time'], filemtime($filename)); 
+      </font></p>
+    <p>&nbsp;</p>
+    <p><font face="Courier New, Courier, mono">$gTpl-&gt;Assign('LASTUPDATEPRICE', 
+      $echo_string); </font></p>
+  </blockquote>
+  <p><font face="Courier New, Courier, mono"> } </font></p>
+</blockquote>
+<p><font face="Courier New, Courier, mono">?&gt;</font></p>
+<hr>
+<p>Для того чтобы система смогла определить, что данный файл является модулем, 
+  а не вспомогательным файлом, необходимо чтобы файл обязательно начинался с приставки 
+  &quot;<em>mod_</em>&quot;. Для работы с шаблонами магазина, необходимо объявить 
+  глобальную переменную <em>$gTpl</em>, а результаты функции выводить с помощью 
+  метода <em>Assign(название_ключа_в_шаблоне, значение_ключа)</em>. В файле обязательно 
+  должна присутствовать функция, название которой совпадает с именем файла (без 
+  расширения), в нашем случае, это функция <em>mod_price</em>. Эта функция будет 
+  вызвана автоматически сразу после присоединения модуля. Кроме этого, эта функция 
+  должна иметь один входной параметр, в примере определяется как переменная <em>$mPageType</em>. 
+  В данную переменную подставляется код скрипта, например<em> index, dir, goods</em> 
+  и т.п. таким образом, появляется возможность определить какой именно скрипт 
+  вызвал этот модуль.</p>
+<p>&nbsp;</p>
+<p><strong>2.</strong> Сохраните это файл в папку <em>php_mod</em> на сайте магазина. 
+  Данная папка автоматически сканируется скриптами на наличие в ней дополнительных 
+  модулей. </p>
+<p>&nbsp;</p>
+<p><strong>3.</strong> Используя <a href="../nastroiki/prof_nastroiki/redaktor_shablona_magazina.htm">редактор 
+  шаблонов</a>, необходимо поместить в соответствующий шаблон ключ в фигурных 
+  скобках (для примера, это будет <font face="Courier New, Courier, mono"><em>{LASTUPDATEPRICE</em></font><em>}</em>). 
+  На место этого ключа и будет выводиться необходимая информация. Также, в нашем 
+  случае, можно создать раздел или текстовый блок в наименование или содержимое 
+  которого вставить также этот ключ <font face="Courier New, Courier, mono"><em>{LASTUPDATEPRICE</em></font><em>}</em>.</p>
+<p>&nbsp;</p>
+</body>
+</html>

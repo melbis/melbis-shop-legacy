@@ -1,0 +1,1846 @@
+<html>
+<head>
+<title>Формат MS5. Спецификация формата MS5.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Спецификация формата MS5.">
+<meta name="keywords" content="база товаров MS5 формат интернет магазин купить продать заказать">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#000099" vlink="#000099" alink="#000099" leftmargin="0" topmargin="5" marginwidth="0" marginheight="0">
+<table width="710" border="0" cellspacing="0" cellpadding="0" align="center" style="margin-top: 20px;">
+  <tr> 
+    <td><a href="/"><img src="img/case.gif" width="45" height="63" border="0" alt="База товаров"></a></td>
+    <td style="padding-left: 5px;"><a href="/"><img src="img/logo.gif" width="236" height="63" alt="Формат MS5. База данных товаров интернет-магазина." border="0"></a></td>
+    <td width="100%">&nbsp;</td>
+  </tr>
+</table>
+<table width="710" border="0" cellspacing="0" cellpadding="5" align="center" style="border: 1px solid #B5B9BC;">
+  <tr> 
+    <td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td><img src="img/empty.gif" width="1" height="5"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#B0BAC3"><img src="img/empty.gif" width="1" height="1"></td>
+  </tr>
+  <tr> 
+    <td><img src="img/empty.gif" width="1" height="5"></td>
+  </tr>
+</table>
+	  
+      <p><b><a name="files"></a>Описание файлов составляющих формат MS5</b></p>
+      <p>Вместе с MS5-документом, имеющим расширение .xml, формат MS5 включает 
+        в себя одноименную папку (с приставкой <i>files_</i>), в которой находятся 
+        две другие папки: <i>base_files</i> и <i>shop_files</i>. Папка <i>base_files</i> 
+        содержит <b>исходные</b> файлы изображений товаров, значений характеристик 
+        и окантовки для товаров. В папке же <i>shop_files</i> находятся <b>сформированные</b> 
+        файлы изображений товаров и значений характеристик. Наличие любых файлов 
+        не является обязательным, то есть они могут не поставляться вместе с MS5-документом.</p>
+      <p>&nbsp;</p>
+      <p><b><big><a name="structure" id="structure"></a></big>Структура MS5-документа</b><br>
+      </p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td>&lt;<a href="#MS5">MS5</a>&gt;</td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-1.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#GoodsList">GoodsList</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-1.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Feature">Feature</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Info">Info</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Value">Value</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Icon">Icon</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-1.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Catalogue">Catalogue</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Topic">Topic</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Icon">Icon</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-1.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Currencies">Currencies</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Currency">Currency</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-1.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Providers">Providers</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Provider">Provider</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Store">Store</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Goods">Goods</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-1.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Icon">Icon</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-1.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Appendix">Appendix</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-1.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Images">Images</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Image">Image</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Icon">Icon</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Description">Description</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-1.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#GoodsFeature">GoodsFeature</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Trait">Trait</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-1.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#GoodsCatalogue">GoodsCatalogue</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Place">Place</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#GoodsSet">GoodsSet</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Set">Set</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#OrderList">OrderList</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Order">Order</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-1.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#OrderStore">Store</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-3.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#OrderGoods">Goods</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Client">Client</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-4.gif" width="7" height="17" hspace="5"></td>
+                <td style="padding-left: 20px;"><img src="img/tree-2.gif" width="7" height="17" hspace="5"></td>
+                <td width="100%">&lt;<a href="#Field">Field</a>&gt;</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <p><big><a name="MS5"></a>&lt;MS5&gt;</big></p>
+      <p> Основной элемент документа.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> 
+            <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td>version</td>
+                <td>String</td>
+                <td>Номер версии MS5-документа</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>generate</td>
+                <td>String</td>
+                <td>Программа в который был сгенерирован данный документ.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p align="right" class="small">&nbsp;</p>
+      <p><big><a name="GoodsList" id="GoodsList"></a>&lt;GoodsList&gt;</big></p>
+      <p>Элемент товарных предложений.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>with_base_file</td>
+                <td>True/False</td>
+                <td>Флаг, указывающий на то, прилагаются ли к данному документы 
+                  исходные изображения (<em>True</em>) или нет (<em>False</em>).</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>date_time</td>
+                <td>String</td>
+                <td>Дата и время создания элемента. <br>
+                  Формат: <em>Год-месяц-число часы(24h): минуты:секунды</em>.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p>&nbsp;</p>
+      <p><big><a name="Feature" id="Feature"></a>&lt;Feature&gt;</big></p>
+      <p>Элемент дерева характеристик и их значений для товаров.</p>
+      <p>&nbsp;</p>
+      <p><big><a name="Info" id="Info"></a>&lt;Info&gt;</big></p>
+      <p>Элемент характеристики.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td bgcolor="#FFCCCC">id</td>
+                <td>Integer(&gt;0)</td>
+                <td>ID - уникальный идентификатор характеристики.</td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td>parent_id</td>
+                <td>Integer</td>
+                <td>ID родителя в дереве. Имеет значение <i>0</i>, если элемент 
+                  расположен в корне.</td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td>name</td>
+                <td>String(255)</td>
+                <td>Наименование характеристики.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>descr</td>
+                <td>String</td>
+                <td>Описание характеристики.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>is_folder</td>
+                <td>True/False</td>
+                <td>Флаг, указывающий тип характеристики. <i>True</i> - группа 
+                  характеристик (раздел), <i>False</i> - непосредственно сама 
+                  характеристика (файл).</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>key_name</td>
+                <td>String(20)</td>
+                <td>Ключ в шаблоне на место которого подставляется значение характеристики.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>in_main</td>
+                <td>True/False</td>
+                <td>Флаг отображения характеристики в каталоге.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>in_preview</td>
+                <td>True/False</td>
+                <td bgcolor="#EEEEEE">Флаг отображения характеристики на странице 
+                  или в расширенном описании товара.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>in_family</td>
+                <td>True/False</td>
+                <td>Флаг отображения характеристики на странице товара в таблице 
+                  семейства товаров.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p>&nbsp;</p>
+      <p><big><a name="Value" id="Value"></a>&lt;Value&gt;</big></p>
+      <p>Элемент значения характеристики.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td bgcolor="#FFCCCC">id</td>
+                <td>Integer(&gt;0)</td>
+                <td>ID - уникальный идентификатор значения характеристики.</td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td>name</td>
+                <td>String(255)</td>
+                <td>Непосредственно значение характеристики.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p>&nbsp;</p>
+      <p><big><a name="Icon" id="Icon"></a>&lt;Icon&gt;</big></p>
+      <p>Элемент связки изображения с конечным файлом.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td bgcolor="#FFCCCC">icon_file</td>
+                <td>String</td>
+                <td>Наименования файла сформированного изображения.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>base_file</td>
+                <td>String</td>
+                <td>Наименование файла исходного изображения.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>base_x</td>
+                <td>Integer</td>
+                <td>Координата Х левого угла вырезаемой области исходного изображения. 
+                  Начало координат в верхнем левом углу.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>base_y</td>
+                <td>Integer</td>
+                <td>Координата Y левого угла вырезаемой области исходного изображения. 
+                  Начало координат в верхнем левом углу.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>base_w</td>
+                <td>Integer</td>
+                <td>Ширина вырезаемой области исходного изображения.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>base_h</td>
+                <td>Integer</td>
+                <td>Высота вырезаемой области исходного изображения.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>icon_x</td>
+                <td>Integer</td>
+                <td>Отступ слева вставленной области исходного изображения внутрь 
+                  формируемой иконки.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>icon_y</td>
+                <td>Integer</td>
+                <td>Отступ сверху вставленной области исходного изображения внутрь 
+                  формируемой иконки.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>icon_w</td>
+                <td>Integer</td>
+                <td>Ширина иконки либо новое значение ширины области исходного 
+                  изображения.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>icon_h</td>
+                <td>Integer</td>
+                <td>Высота иконки либо новое значение высоты области исходного 
+                  изображения.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>pos_center</td>
+                <td>True/False</td>
+                <td>Флаг автоматического позиционирования вырезанной области исходного 
+                  изображения, внутри формируемой иконки.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>color_trans</td>
+                <td>Integer</td>
+                <td>Код цвета, который следует считать прозрачным в изображении 
+                  окантовки. </td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>color_back</td>
+                <td>Integer</td>
+                <td>Код цвета заднего фона формируемой иконки.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>border_w</td>
+                <td>Integer</td>
+                <td>Величина отступа от краев вставленной области исходного изображения 
+                  внутрь формируемой иконки.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>border_file</td>
+                <td>Integer</td>
+                <td>Наименование файла c изображением окантовки.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p>&nbsp;</p>
+      <p><big><a name="Catalogue" id="Catalogue"></a>&lt;Catalogue&gt;</big></p>
+      <p>Элемент дерева разделов для товаров.</p>
+      <p>&nbsp;</p>
+      <p><big><a name="Topic" id="Topic"></a>&lt;Topic&gt;</big></p>
+      <p>Элемент раздела.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td bgcolor="#FFCCCC">id</td>
+                <td>Integer(&gt;0)</td>
+                <td>ID - уникальный идентификатор раздела.</td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td>parent_id</td>
+                <td>Integer</td>
+                <td>ID родителя в дереве. Имеет значение <i>0</i>, если элемент 
+                  расположен в корне.</td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td>name</td>
+                <td>String(255)</td>
+                <td>Наименование раздела.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>full_descr</td>
+                <td>String</td>
+                <td>Описание раздела для покупателей.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>active</td>
+                <td>True/False</td>
+                <td>Флаг состояния: <em>True</em> - отображать, <em>False</em> 
+                  - не отображать.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>is_type</td>
+                <td>Integer</td>
+                <td><p>Код типа раздела. Возможные значения:</p>
+                  <p>- 0 : &quot;Отдел с товарами&quot;;</p>
+                  <p>- 1 : &quot;Страница с текстом&quot;;</p>
+                  <p>- 2 : &quot;Ссылка на страницу&quot;;</p>
+                  <p>- 3 : &quot;Первая страница магазина&quot;.</p></td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>link</td>
+                <td>String(255)</td>
+                <td>URL-адрес ссылки. Имеет смысл когда атрибут <em>is_type</em> 
+                  имеет значение <em>2</em>. </td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>seo_title</td>
+                <td>String(255)</td>
+                <td>Заголовок страницы для SEO.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>seo_descr</td>
+                <td>String(255)</td>
+                <td>Краткое описание для SEO.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>seo_keywords</td>
+                <td>String(255)</td>
+                <td>Набор ключевых слов для SEO.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>seo_link</td>
+                <td>String(255)</td>
+                <td>Подпись к ссылке на раздел для SEO.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>seo_psu</td>
+                <td>String(70)</td>
+                <td>Псевдостатический код раздела для SEO.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>in_xml</td>
+                <td>True/False</td>
+                <td>Флаг отображения раздела при формировании XML каталога: <em>True</em> 
+                  - отображать, <em>False</em> - не отображать</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>div_before</td>
+                <td>True/False</td>
+                <td>Флаг разделителя перед разделом: <em>True</em> - отображать, 
+                  <em>False</em> - не отображать.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>in_cat_left</td>
+                <td>True/False</td>
+                <td>Флаг отображения раздела в каталоге типа &quot;Боковой слева&quot;: 
+                  <em>True</em> - отображать, <em>False</em> - не отображать.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>in_cat_center</td>
+                <td>True/False</td>
+                <td>Флаг отображения раздела в каталоге типа &quot;Центральный&quot;: 
+                  <em>True</em> - отображать, <em>False</em> - не отображать.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>in_cat_menu</td>
+                <td>True/False</td>
+                <td>Флаг отображения раздела в каталоге типа &quot;Верхнее меню&quot;: 
+                  <em>True</em> - отображать, <em>False</em> - не отображать.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>in_cat_down</td>
+                <td>True/False</td>
+                <td>Флаг отображения раздела в каталоге типа &quot;Выпадающий&quot;: 
+                  <em>True</em> - отображать, <em>False</em> - не отображать.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>template_name</td>
+                <td>String(50)</td>
+                <td>Наименование папки с дизайн-макетом страницы.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>templates_goods</td>
+                <td>String(50)</td>
+                <td>Наименование папки с дизайн-макетом товаров раздела.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>main_goods_col</td>
+                <td>Integer</td>
+                <td>Количество колонок для основного перечня товаров в разделе.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>step_goods</td>
+                <td>Integer</td>
+                <td>Количество товаров отображаемых за раз на одной странице раздела.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>new_goods_col</td>
+                <td>Integer</td>
+                <td>Количество колонок для товаров в блоке &quot;Новинки&quot;.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>new_goods_how</td>
+                <td>Integer</td>
+                <td>Количество отображаемых товаров в блоке &quot;Новинки&quot;.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>hit_goods_col</td>
+                <td>Integer</td>
+                <td>Количество колонок для товаров в блоке &quot;Хиты&quot;.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>hit_goods_how</td>
+                <td>Integer</td>
+                <td>Количество отображаемых товаров в блоке &quot;Хиты&quot;.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>sub_sec_type</td>
+                <td>Integer</td>
+                <td><p>Код способа отображения подразделов данного раздела. Возможные 
+                    значения:</p>
+                  <p>- 0 : &quot;Простой (1 уровень)&quot;, </p>
+                  <p>- 1 : &quot;С его подразделами (2 уровень)&quot;.</p></td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>order_by_voice</td>
+                <td>True/False</td>
+                <td>Флаг активирующий способ сортировки товаров в разделе: <em>True</em> 
+                  - по отзывам к товарам, <em>False</em> - по заданному порядку.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p>&nbsp;</p>
+      <p><big><a name="Currencies" id="Currencies"></a>&lt;Currencies&gt;</big></p>
+      <p>Элемент списка валют для задания цен товарам.</p>
+      <p>&nbsp;</p>
+      <p><big><a name="Currency" id="Currency"></a>&lt;Currency&gt;</big></p>
+      <p>Элемент валюты.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td bgcolor="#FFCCCC">id</td>
+                <td>Integer(&gt;0)</td>
+                <td>ID - уникальный идентификатор валюты.</td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td>name</td>
+                <td>String(255)</td>
+                <td>Наименование валюты.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>multiplex</td>
+                <td>Currency(0.00)</td>
+                <td>Курс перевода валюты по отношению к базовой валюте магазина.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>division</td>
+                <td>True/False</td>
+                <td>Флаг курса перевода: <em>True</em> - делить на курс перевода, 
+                  <em>False</em> - умножать на курс перевода.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p><big><a name="Providers" id="Providers"></a>&lt;Providers&gt;</big></p>
+      <p>Элемент списка поставщиков товаров.</p>
+      <p>&nbsp;</p>
+      <p><big><a name="Provider" id="Provider"></a>&lt;Provider&gt;</big></p>
+      <p>Элемент поставщика.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td bgcolor="#FFCCCC">id</td>
+                <td>Integer(&gt;0)</td>
+                <td>ID - уникальный идентификатор поставщика.</td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td>name</td>
+                <td>String(255)</td>
+                <td>Наименование поставщика.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>manager</td>
+                <td>String(255)</td>
+                <td>Менеджер поставщика.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>e-mail</td>
+                <td>String(75)</td>
+                <td>E-mail адрес менеджера поставщика.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>phone</td>
+                <td>String(255)</td>
+                <td>Телефон менеджера поставщика.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p>&nbsp;</p>
+      <p><big><a name="Store" id="Store"></a>&lt;Store&gt;</big></p>
+      <p>Элемент списка товаров.</p>
+      <p>&nbsp;</p>
+      <p><big><a name="Goods" id="Goods"></a>&lt;Goods&gt;</big></p>
+      <p>Элемент товара.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td bgcolor="#FFCCCC">id</td>
+                <td>Integer(&gt;0)</td>
+                <td>ID - уникальный идентификатор товара.</td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td>name</td>
+                <td>String(255)</td>
+                <td>Наименование товара.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>code</td>
+                <td>String(255)</td>
+                <td>Артикул товара в магазине.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>descr</td>
+                <td>String</td>
+                <td>Краткое описание товара.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>price</td>
+                <td>Currency(0.00)</td>
+                <td>Стоимость товара. </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>curr_id</td>
+                <td>Integer</td>
+                <td>Идентификатор валюты для стоимости товара.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>disc_price</td>
+                <td>Currency(0.00)</td>
+                <td>Стоимость товара для распродажи. </td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>disc_price_curr_id</td>
+                <td>Integer</td>
+                <td>Идентификатор валюты для стоимости товара для распродажи.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>prov_price</td>
+                <td>Currency(0.00)</td>
+                <td>Стоимость товара от поставщика. </td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>prov_price_curr_id</td>
+                <td>Integer</td>
+                <td>Идентификатор валюты для стоимости товара от поставщика.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>provider_id</td>
+                <td>Integer</td>
+                <td>Идентификатор поставщика.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td bgcolor="#EEEEEE">meas</td>
+                <td>String(20)</td>
+                <td> <p>Единица измерения товара.</p></td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>status</td>
+                <td>Integer</td>
+                <td> <p>Статус товара: 0 - &quot;Есть на складе&quot;, 1 - &quot;Отсутствует&quot;, 
+                    2 - &quot;Ожидается&quot;, 3 - &quot;Под заказ&quot;</p></td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>active</td>
+                <td>True/False</td>
+                <td>Флаг состояния: <em>True</em> - отображать, <em>False</em> 
+                  - не отображать.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>part_proc</td>
+                <td>Currency(0.00)</td>
+                <td>Процент от стоимости товара, выплачиваемый партнерам.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>step_order</td>
+                <td>Integer</td>
+                <td>Шаг заказа товара.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>min_order</td>
+                <td>Integer</td>
+                <td>Минимальное количество товара для заказа.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>tax</td>
+                <td>Currency(0.00)</td>
+                <td>Такса товара (для расчета стоимости доставки).</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>how</td>
+                <td>Integer</td>
+                <td>Количество товара на складе.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>kind</td>
+                <td>Integer</td>
+                <td>Тип товара: 0 - &quot;Обычный товар&quot;, 1 - &quot;Только 
+                  в комплекте&quot;, 2 - &quot;Комплект товаров&quot;.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>seo_title</td>
+                <td>String(255)</td>
+                <td>Заголовок страницы для SEO.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>seo_descr</td>
+                <td>String(255)</td>
+                <td>Краткое описание для SEO.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>seo_keywords</td>
+                <td>String(255)</td>
+                <td>Набор ключевых слов для SEO.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>seo_link</td>
+                <td>String(255)</td>
+                <td>Подпись к ссылке на товар для SEO.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>seo_alt</td>
+                <td>String(255)</td>
+                <td>Альтернативный текст к изображению товара для SEO.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>seo_psu</td>
+                <td>String(70)</td>
+                <td>Псевдостатический код товара для SEO.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>in_xml</td>
+                <td>True/False</td>
+                <td>Флаг отображения товара при формировании XML каталога: <em>True</em> 
+                  - отображать, <em>False</em> - не отображать</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p>&nbsp;</p>
+      <p><big><a name="Appendix" id="Appendix"></a>&lt;Appendix&gt;</big></p>
+      <p>Элемент расширенного описания товара.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td bgcolor="#FFCCCC">template_type</td>
+                <td>Integer</td>
+                <td><p>Код типа используемого макета для расширенного описания. 
+                    Макет определяет стиль и способ компоновки текста и изображения. 
+                    Возможные значения:</p>
+                  <p>- от 0 до 3 : один из четырех стандартных макетов;</p>
+                  <p>- 4 : используется собственный макет (определяется через 
+                    атрибут &quot;template&quot;)</p></td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>template</td>
+                <td>String(50)</td>
+                <td> 
+                  <p>Наименование папки с собственным макетом расширенного описания. 
+                    Имеет смысл, когда атрибут &quot;template_type&quot; имеет 
+                    значение &quot;4&quot;. Перед импортом папка с макетом должна 
+                    находится в подкаталоге &quot;Templates&quot; в папке базы 
+                    данных магазина.</p>
+                  </td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>title</td>
+                <td>String(255)</td>
+                <td>Заголовок расширенного описания товара.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>col_big</td>
+                <td>Integer</td>
+                <td>Количество колонок для изображении класса &quot;Большие&quot;.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>col_small</td>
+                <td>Integer</td>
+                <td>Количество колонок для изображении класса &quot;Маленькие&quot;.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>font_title</td>
+                <td>String(255)</td>
+                <td>Наименование шрифта для заголовка расширенного описания.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td bgcolor="#EEEEEE">font_img</td>
+                <td>String(255)</td>
+                <td> <p>Наименование шрифта для подписи к изображениям.</p></td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>size_title</td>
+                <td>Integer</td>
+                <td>Размер шрифта для заголовка расширенного описания.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>size_img</td>
+                <td>Integer</td>
+                <td>Размер шрифта для подписи к изображениям.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>open_type</td>
+                <td>Integer</td>
+                <td><p>Код способа просмотра расширенного описания:</p>
+                  <p>- 0 : в выпадающем окне (pop-up);</p>
+                  <p>- 1 : на странице товара.</p></td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>x</td>
+                <td>Integer</td>
+                <td>Положение окна расширенного описания по оси Х. Имеет смысл, 
+                  когда атрибут &quot;open_type&quot; имеет значение &quot;0&quot;.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>y</td>
+                <td>Integer</td>
+                <td>Положение окна расширенного описания по оси Y. Имеет смысл, 
+                  когда атрибут &quot;open_type&quot; имеет значение &quot;0&quot;.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>w</td>
+                <td>Integer</td>
+                <td>Ширина окна расширенного описания. Имеет смысл, когда атрибут 
+                  &quot;open_type&quot; имеет значение &quot;0&quot;.</td>
+              </tr>
+              <tr bgcolor="#EEEEEE"> 
+                <td>h</td>
+                <td>Integer</td>
+                <td>Высота окна расширенного описания. Имеет смысл, когда атрибут 
+                  &quot;open_type&quot; имеет значение &quot;0&quot;.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p>&nbsp;</p>
+      <p><big><a name="Images" id="Images"></a>&lt;Images&gt;</big></p>
+      <p>Элемент списка изображений в расширенном описании товара.</p>
+      <p>&nbsp;</p>
+      <p><big><a name="Image" id="Image"></a>&lt;Image&gt;</big></p>
+      <p>Элемент изображения.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td bgcolor="#FFCCCC">type</td>
+                <td>Integer</td>
+                <td><p>Код класса изображения. Возможные значения:</p>
+                  <p>- 0 : &quot;Большое&quot; изображение;</p>
+                  <p>- 1 : &quot;Маленькое&quot; изображение;</p>
+                  <p>- 2 : &quot;Увеличенное&quot; изображение.</p>
+                  </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>descr</td>
+                <td>String(255)</td>
+                <td> <p>Краткое описание или подпись к изображению.</p></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p>&nbsp;</p>
+      <p><big><a name="Description" id="Description"></a>&lt;Description&gt;</big></p>
+      <p>Элемент содержащий текстовый блок для расширенного описания товара.</p>
+      <p>&nbsp;</p>
+      <p><big><a name="GoodsFeature" id="GoodsFeature"></a>&lt;GoodsFeature&gt;</big></p>
+      <p>Элемент списка характеристик и их значений для товара.</p>
+      <p>&nbsp;</p>
+      <p><big><a name="Trait" id="Trait"></a>&lt;Trait&gt;</big></p>
+      <p>Элемент связи характеристики и ее значения с товаром.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td bgcolor="#FFCCCC">info_id</td>
+                <td>Integer</td>
+                <td><p>ID характеристики.</p>
+                  </td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td>value_id</td>
+                <td>Integer</td>
+                <td> <p>ID значения характеристики.</p></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p><big><a name="GoodsCatalogue" id="GoodsCatalogue"></a>&lt;GoodsCatalogue&gt;</big></p>
+      <p>Элемент списка разделов в которых находится товар.</p>
+      <p>&nbsp;</p>
+      <p><big><a name="Place" id="Place"></a>&lt;Place&gt;</big></p>
+      <p>Элемент связи раздела с товаром.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td bgcolor="#FFCCCC">topic_id</td>
+                <td>Integer</td>
+                <td><p>ID раздела.</p></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>pos</td>
+                <td>Integer</td>
+                <td> 
+                  <p>Индекс определяющий позицию товара в разделе.</p></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p>&nbsp;</p>
+      <p><big><a name="GoodsSet" id="GoodsSet"></a>&lt;GoodsSet&gt;</big></p>
+      <p>Элемент списка комплектующих товара. Имеет смысл, когда атрибут <em>kind</em> 
+        элемента <em><a href="#Goods">Goods</a></em> имеет значение <em>2</em>.</p>
+      <p>&nbsp;</p>
+      <p><big><a name="Set" id="Set"></a>&lt;Set&gt;</big></p>
+      <p>Элемент комплектующего.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td bgcolor="#FFCCCC">goods_id</td>
+                <td>Integer</td>
+                <td><p>ID товара входящего в комплект.</p></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>how</td>
+                <td>Integer</td>
+                <td> <p>Количество товара в комплекте.</p></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p>&nbsp;</p>
+      <p><big><a name="OrderList" id="OrderList"></a>&lt;OrderList&gt;</big></p>
+      <p>Элемент списка заказов.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>date_time</td>
+                <td>String</td>
+                <td>Дата и время создания элемента. <br>
+                  Формат: <em>Год-месяц-число часы(24h): минуты:секунды</em>.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p>&nbsp;</p>
+      <p><big><a name="Order" id="Order"></a>&lt;Order&gt;</big></p>
+      <p>Элемент заказа.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td>id</td>
+                <td>Integer(&gt;0)</td>
+                <td>ID - уникальный идентификатор заказа.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>sid</td>
+                <td>String(32)</td>
+                <td>Идентификационный код заказа.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>date_time</td>
+                <td>String</td>
+                <td>Дата и время создания заказа. <br>
+                  Формат: <em>Год-месяц-число часы(24h): минуты:секунды</em>.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>code</td>
+                <td>String(255)</td>
+                <td>Код заказа</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>status</td>
+                <td>Integer</td>
+                <td>Статус заказа: 0 - &quot;Новый заказ&quot;, 1 - &quot;Принят 
+                  к выполнению&quot;, 2 - &quot;В процессе доставки&quot;, 3 - 
+                  &quot;Выполнен&quot;, 4 - &quot;Аннулирован&quot;</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>payment</td>
+                <td>Integer</td>
+                <td>Статус оплаты заказа: 1 - &quot;Не оплачен&quot;, 2 - &quot;Оплачен&quot;.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>in_all_sum</td>
+                <td>Currency(0.00)</td>
+                <td>Сумма &quot;Итого&quot;.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>discount_sum</td>
+                <td>Currency(0.00)</td>
+                <td>Сумма скидки.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>condition_sum</td>
+                <td>Currency(0.00)</td>
+                <td> <p>Сумма стоимости дополнительных услуг.</p></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>delivery_sum</td>
+                <td>Currency(0.00)</td>
+                <td> <p>Сумма стоимости доставки.</p></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>total_sum</td>
+                <td>Currency(0.00)</td>
+                <td>Сумма &quot;Всего&quot;.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>payment_sum</td>
+                <td>Currency(0.00)</td>
+                <td>Сумма &quot;К оплате&quot;.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>condition_value</td>
+                <td>String</td>
+                <td>Наименование дополнительных услуг.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>delivery_value</td>
+                <td>String(255)</td>
+                <td>Наименование способа доставки.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>payment_value</td>
+                <td>String(255)</td>
+                <td>Наименование способа расчета.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>payment_currency</td>
+                <td>String(20)</td>
+                <td>Количество товара на складе.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>client_note</td>
+                <td>String</td>
+                <td>Примечание покупателя к заказу.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>service_note</td>
+                <td>String</td>
+                <td>Внутреннее примечание к заказу.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>delivery_id</td>
+                <td>Integer(&gt;0)</td>
+                <td>ID - уникальный идентификатор доставки.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>condition_code</td>
+                <td>String(255)</td>
+                <td>Перечень идентификаторов дополнительных условий (символ разделитель 
+                  - &quot;;&quot;).</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>payment_id</td>
+                <td>Integer(&gt;0)</td>
+                <td>ID - уникальный идентификатор способа оплаты.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>client_id</td>
+                <td>Integer(&gt;0)</td>
+                <td>ID - уникальный идентификатор клиента.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>manager_id</td>
+                <td>Integer(&gt;0)</td>
+                <td>ID - уникальный идентификатор менеджера заказа.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>partner_id</td>
+                <td>Integer(&gt;0)</td>
+                <td>ID - уникальный идентификатор партнера. </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>partner_sum</td>
+                <td>Currency(0.00)</td>
+                <td>Сумма общего партнерского вознаграждения.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p>&nbsp;</p>
+      <p><big><a name="OrderStore" id="OrderStore"></a>&lt;Store&gt;</big></p>
+      <p>Элемент списка товаров заказа.</p>
+      <p>&nbsp;</p>
+      <p><big><a name="OrderGoods" id="OrderGoods"></a>&lt;Goods&gt;</big></p>
+      <p>Элемент товара.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td>id</td>
+                <td>Integer(&gt;0)</td>
+                <td>ID - уникальный идентификатор товара.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>code</td>
+                <td>String(255)</td>
+                <td>Артикул товара.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>meas</td>
+                <td>String(20)</td>
+                <td>Единица измерения количества товара.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>name</td>
+                <td>String(255)</td>
+                <td>Наименование товара.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>parameter_value</td>
+                <td>String</td>
+                <td>Наименование дополнительных параметров товара.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>start_price</td>
+                <td>Currency(0.00)</td>
+                <td>Исходная стоимость товара.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>final_price</td>
+                <td>Currency(0.00)</td>
+                <td>Продажная стоимость товара за вычетом скидок.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>prov_price</td>
+                <td>Currency(0.00)</td>
+                <td>Стоимость товара от поставщика.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>provider_id</td>
+                <td>Integer</td>
+                <td>Идентификатор поставщика.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>tax</td>
+                <td>Currency(0.00)</td>
+                <td>Такса товара (для расчета стоимости доставки).</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>inside_disc</td>
+                <td>Currency(0.00)</td>
+                <td> <p>Сумма внутренней скидки.</p></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>how_ordered</td>
+                <td>Integer</td>
+                <td> <p>Заказанное количество.</p></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>discount_in_all_sum</td>
+                <td>Currency(0.00)</td>
+                <td>Суммарная величина скидки.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>partner_procent</td>
+                <td>Currency(0.00)</td>
+                <td>Партнерский процент.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>partner_sum</td>
+                <td>Currency(0.00)</td>
+                <td>Сумма партнерского вознаграждения.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p>&nbsp;</p>
+      <p><big><a name="Client" id="Client"></a>&lt;Client&gt;</big></p>
+      <p style="margin-bottom: 5px">Элемент списка регистрационных полей покупателя.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>login</td>
+                <td>String(255)</td>
+                <td>Логин покупателя.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>email</td>
+                <td>String(75)</td>
+                <td>E-mail адрес покупателя.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>category</td>
+                <td>String(255)</td>
+                <td>Категория покупателя.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p>&nbsp;</p>
+      <p><big><a name="Field" id="Field"></a>&lt;Field&gt;</big></p>
+      <p style="margin-bottom: 5px">Элемент регистрационного поля покупателя.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 5px; margin-bottom: 5px;">
+        <tr> 
+          <td bgcolor="#666666"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Атрибут</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Тип данных</b></font></div></td>
+                <td nowrap> <div align="center"><font color="#FFFFFF"><b>Описание</b></font></div></td>
+              </tr>
+              <tr bgcolor="#FFCCCC"> 
+                <td>id</td>
+                <td>Integer(&gt;0)</td>
+                <td>ID - уникальный идентификатор поля.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>name</td>
+                <td>String(255)</td>
+                <td>Наименование поля.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td>value</td>
+                <td>String</td>
+                <td>Значение поля для покупателя.</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#FFCCCC"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small"> &nbsp;- обязательный атрибут&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td bgcolor="#EEEEEE"><img src="img/empty.gif" width="30" height="15" border="1"></td>
+                      <td nowrap class="small">&nbsp;- специфический атрибут, 
+                        используемый программой <a href="http://www.melbis.com" target="_blank">Melbis 
+                        Shop</a></td>
+                      <td width="100%">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="right" class="small">&raquo; <a href="#structure">назад к структуре</a></p>
+      <p>&nbsp;</p>
+      </td>
+  </tr>
+</table>
+<table width="710" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td><img src="img/empty.gif" width="1" height="1"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#B0BAC3"><img src="img/empty.gif" width="1" height="1"></td>
+  </tr>
+
+</table>
+</body>
+</html>

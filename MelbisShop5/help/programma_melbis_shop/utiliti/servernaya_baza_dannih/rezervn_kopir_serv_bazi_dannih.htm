@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Резервное копирование серверной базы данных</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+A:active 
+{
+	CURSOR: default; 
+	TEXT-DECORATION: none;
+}
+A:hover 
+{
+	TEXT-DECORATION: none; 
+}
+A.no_link
+{
+ 	TEXT-DECORATION: none; 
+ 	COLOR : #000000
+}
+BODY, TD  
+{
+	FONT-SIZE: 9pt; 
+	FONT-FAMILY: Arial, Tahoma, MS Sans Serif;
+	text-align : justify
+}
+P
+{
+	margin: 0cm;	
+}
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h2 align="center">Резервное копирование серверной базы данных</h2>
+<p>Резервное копирование данных, хранящихся на сервере, осуществляется силами 
+  его владельцев, однако в ряде случаев может быть полезно самостоятельное резервное 
+  копирование серверной базы данных владельцем магазина.</p>
+<p>&nbsp;</p>
+<p>Выбор подменю &quot;<em>Утилиты</em><em> - Серверная база данных - Резервное 
+  копирование базы данных&quot;</em> приводит к появлению окна, в котором следует 
+  указать сохраняемые данные из списка предложенных и нажать кнопку «Выполнить».</p>
+<p>&nbsp;</p>
+<p align="center"><img src="../../../images/rezervn_kopir_serv_bazi_dannih.gif" alt="" width="434" height="386"> 
+</p>
+<p>&nbsp; </p>
+<p>На время выполнения резервного копирования работа серверной части магазина 
+  блокируется.</p>
+<p>&nbsp;</p>
+<p>В завершение файлу-архиву присваивается имя вида &quot;Server_GGGG_MM_DD.zip&quot; 
+  (где GGGG-год, MM-номер месяца,DD-число), запрашивается место для его сохранения 
+  и выдается сообщение о завершении:</p>
+<p>&nbsp;</p>
+<p align="center"><img src="../../../images/rezervn_kopir_serv_bazi_dannih2.gif" width="326" height="126"></p>
+<p align="center">&nbsp;</p>
+<p align="justify">Полученный файл-архив содержит выбранные для сохранения данные 
+  в XML формате, что позволяет использовать данную утилиту также и для экспорта 
+  этих данных в другие программы.</p>
+<p align="center">&nbsp;</p>
+<p align="justify">Следует понимать, что резервное копирование серверной базы 
+  данных не касается данных, хранящихся на локальной машине с установленной программой 
+  Melbis Shop. Создание резервной копии данных, хранящихся на локальной машине, 
+  см. <a href="../lokalnaya_baza_dannih/rezervnoe_kopirovanie.htm">Резервное копирование 
+  локальной базы данных</a>. </p>
+</body>
+</html>

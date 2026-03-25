@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>Установки магазина на сервере</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+A:active 
+{
+	CURSOR: default; 
+	TEXT-DECORATION: none;
+}
+A:hover 
+{
+	TEXT-DECORATION: none; 
+}
+A.no_link
+{
+ 	TEXT-DECORATION: none; 
+ 	COLOR : #000000
+}
+BODY, TD  
+{
+	FONT-SIZE: 9pt; 
+	FONT-FAMILY: Arial, Tahoma, MS Sans Serif;
+	text-align : justify
+}
+P
+{
+	margin: 0cm;	
+}
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h2 align="center">Установки магазина на сервере</h2>
+<p>Параметры магазина, необходимые для работы серверной части комплекса, хранятся 
+  на сервере. Отредактировать эти параметры можно вручную, например, по FTP в 
+  файле на сервере: <strong>/admin/privat/privat.php</strong>, но гораздо удобнее 
+  это сделать из программы, выбрав из главного окна <em>&quot;Магазин - Сервер 
+  - Установки магазина на сервере&quot;</em><strong>:</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp; </p>
+<p align="center"><img src="../../../images/ustanovki_magazina_na_servere.gif" width="556" height="553" border="0"></p>
+<p align="center">&nbsp;</p>
+<p align="left">Следует учесть, что &quot;<em>Часовой пояс от абсолютного GMT</em>&quot; 
+  указывается от абсолютного времени по Гринвичу. Например, часовой пояс в Москве 
+  зимой +3 GMT, а при переходе на летнее время +4 GMT.</p>
+<p align="left">&nbsp;</p>
+<p align="left">Помимо этого можно проверить настройки для работы с базой данных, 
+  при успешном выполнении тестирования будет выдано сообщение:</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img src="../../../images/ustanovki_magazina_na_servere1.gif" width="401" height="126" border="0"></p>
+<p align="left">&nbsp; </p>
+<p align="left">и проинсталлировать таблицы - поверх текущих (используется при 
+  начальной установке магазина или его полной переустановке).</p>
+<p align="left">&nbsp;</p>
+<p align="left">Кнопка &quot;<em>Починить таблицы</em>&quot; выполняет тестирование 
+  таблиц с данными на сервере и выполняет операцию по их восстановлению и оптимизации.</p>
+<p align="left">&nbsp;</p>
+<p align="left">Также присутствуют функции, автоматизирующие работу с шаблонами 
+  магазина, обеспечивающими его внешний вид, подробнее см. <a href="../../nastroiki/prof_nastroiki/redaktor_shablona_magazina.htm">редактор 
+  шаблонов магазина</a>. Шаблоны магазина состоят из множества файлов, которые 
+  достаточно долго закачивать или скачивать с сервера по FTP, поэтому есть возможность 
+  ускорить этот процесс путем передачи их в виде zip-архива. </p>
+<p align="left">&nbsp;</p>
+<p align="left">Поля &quot;Пароль для Melbis Agent&quot; и &quot;Пароль для Melbis 
+  Spider&quot; задают пароли для соответствующих программ, поставляемых в <a href="../../../vvedenie.htm">комплексе 
+  Melbis Shop</a>.</p>
+</body>
+</html>
